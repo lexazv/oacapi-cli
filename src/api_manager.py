@@ -1,9 +1,9 @@
 import json
-from typing import Union
+from typing import Any
 from urllib.request import urlopen
 
 
-def make_request(url: str) -> Union[str, dict]:
+def make_request(url: str) -> str | dict[Any, Any]:
     with urlopen(url) as response:
         body = response.read()
         try:
